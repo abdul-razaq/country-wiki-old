@@ -1,7 +1,7 @@
 import { FETCH_ALL_COUNTRIES } from '../actions/types';
 
 
-const initialState = [];
+const initialState = {};
 
 export default (state = initialState, action) => {
 
