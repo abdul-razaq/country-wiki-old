@@ -6,10 +6,13 @@ import AllCountries from '../pages/AllCountries';
 import SelectedCountry from '../pages/SelectedCountry';
 import FavoriteCountries from '../pages/FavoriteCountries';
 
+import GlobalStyle from '../GlobalStyle';
+
 
 const App = () => {
   return (
     <>
+      <GlobalStyle />
       <HomePage />
       <AllCountries />
       <SelectedCountry />

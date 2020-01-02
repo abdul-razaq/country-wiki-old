@@ -6,7 +6,6 @@ import thunk from 'redux-thunk';
 
 import App from './components/App';
 import rootReducer from './store/reducers';
-import GlobalStyle from './GlobalStyle';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,9 +16,7 @@ const store = createStore(
 
 const rootComponent = (
   <Provider store={store}>
-    <GlobalStyle>
       <App />
-    </GlobalStyle>
   </Provider>
 );
 

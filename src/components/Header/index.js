@@ -1,16 +1,14 @@
 import React from 'react';
 
-import StyledHeader from './StyledHeader';
+import StyledHeader, { StyledNav } from './StyledHeader';
 
 const Header = () => {
   return (
     <StyledHeader>
-      <nav>
-        <h1>Country Wiki</h1>
-        <ul>
-          <li>About</li>
-        </ul>
-      </nav>
+      <StyledNav>
+        <h1>Country Encyclopedia</h1>
+        <h3>About</h3>
+      </StyledNav>
     </StyledHeader>
   );
 };
