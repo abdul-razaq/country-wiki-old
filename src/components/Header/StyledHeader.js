@@ -24,6 +24,7 @@ export const StyledNav = styled.nav`
       color: #fff;
       cursor: pointer;
       padding: 0 6rem;
+      border-radius: 5px;
     }
   }
 
@@ -39,6 +40,26 @@ export const StyledNav = styled.nav`
       color: #fff;
       cursor: pointer;
       padding: 0 6rem;
+      border-radius: 5px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    h1 {
+      margin-right: 4rem;
+
+      &:hover {
+        font-size: 2rem;
+      }
+    }
+
+    h3 {
+      margin-top: -1rem;
+      margin-left: 3rem;
     }
   }
 `;
