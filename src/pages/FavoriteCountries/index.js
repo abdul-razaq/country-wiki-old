@@ -3,7 +3,7 @@ import React from 'react';
 
 const FavoriteCountries = () => {
 
-  return <div>FavoriteCountries</div>;
+  return <div>Favorite Countries</div>;
 };
 
 export default FavoriteCountries;
