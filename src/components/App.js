@@ -14,9 +14,9 @@ const App = () => {
     <>
       <GlobalStyle />
       <HomePage />
-      <AllCountries />
+      {/* <AllCountries />
       <SelectedCountry />
-      <FavoriteCountries />
+      <FavoriteCountries /> */}
     </>
   );
 };
