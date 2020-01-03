@@ -10,7 +10,7 @@ const Card = props => {
   return (
     <StyledCard>
       <CardHeader>
-        <img src={Image} alt="image"/>
+        <img src={Image} alt="flag"/>
       </CardHeader>
       <CardBody>
         <p><span style={{fontWeight: 700}}>Country:</span> Pakistan</p>

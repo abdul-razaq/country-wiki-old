@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 // import pages to display
 import HomePage from '../pages/HomePage';
@@ -8,15 +9,19 @@ import FavoriteCountries from '../pages/FavoriteCountries';
 
 import GlobalStyle from '../GlobalStyle';
 
-
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <HomePage />
-      {/* <AllCountries />
-      <SelectedCountry />
-      <FavoriteCountries /> */}
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/countries/all" exact component={AllCountries} />
+        <Route path="/countries/:country" exact component={SelectedCountry} />
+        <Route path="/countries/favorite" exact component={FavoriteCountries} />
+        <Route>
+          404, Page not Found
+        </Route>
+      </Switch>
     </>
   );
 };
