@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #f4f4f4;
     line-height: 3rem;
     font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     color: #444;
   }
     
