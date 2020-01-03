@@ -1,21 +1,15 @@
 import React from 'react';
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {useParams} from 'react-router-dom';
 
 import StyledForm, { StyledLabel, StyledSearchInput } from './StyledSearch';
 
-const Search = () => {
-
-  const onSearchHandler = (event) => {
-    event.preventDefault();
-    console.log(event.target.value);
-  }
+const Search = ({ searchInputHandler }) => {
 
   return (
-    <StyledForm onSubmit={event => event.preventDefault()}>
+    <StyledForm>
       <StyledLabel htmlFor="search"><FontAwesomeIcon icon={faSearchLocation}/> Search Country</StyledLabel>
-        <StyledSearchInput type="search" name="search" aria-label="Search" id="search" placeholder="Search country by name, capital..." />
+        <StyledSearchInput type="search" name="search" aria-label="Search" id="search" placeholder="Search country by name, capital..." onChange={event => searchInputHandler(event.target.value)} />
     </StyledForm>
   );
 }

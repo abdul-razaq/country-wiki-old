@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   max-width: 40rem;
   margin: auto;
   margin-top: 6rem;
