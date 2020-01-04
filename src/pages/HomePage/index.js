@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Header from '../../components/Header';
 import Search from '../../components/Search';
-import Card from '../../components/Card';
+import HomeCard from './HomeCard';
 
 import { searchCountry } from '../../store/actions';
 
 const HomePage = () => {
   const [searchInput, setSearchInput] = useState('');
 
-  const [searchedCountry, setSearchedCountry] = useState({});
-
   const dispatch = useDispatch();
 
-  const country = useSelector(state => state.searchedCountry);
+  useEffect(() => {
+    dispatch(searchCountry(searchInput));
+  }, [searchInput]);
 
   const searchInputHandler = searchValue => {
     setSearchInput(searchValue);
-    dispatch(searchCountry(searchInput));
-    setSearchedCountry(country);
-    console.log(searchedCountry);
   };
 
 
@@ -28,7 +25,7 @@ const HomePage = () => {
     <>
       <Header />
       <Search searchInputHandler={searchInputHandler} />
-      <Card />
+      <HomeCard />
     </>
   );
 };
