@@ -14,7 +14,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(searchCountry(searchInput));
-  }, [searchInput]);
+  }, [searchInput, dispatch]);
 
   const searchInputHandler = searchValue => {
     setSearchInput(searchValue);

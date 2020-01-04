@@ -1,17 +1,19 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import StyledCard, { CardHeader, CardBody, CardFooter } from './StyledCard';
-// import StyledButton from '../Button/StyledButton';
-import Button from '../Button'
-import { selectCountry } from '../../store/actions';
+import Button from '../Button';
 
 
 const Card = ({ country }) => {
 
   const {flag, name, capital} = country;
 
-  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const onCardClick = () => {
+    history.push(`/countries/${name}`);
+  }
 
   return (
     <StyledCard>
@@ -23,7 +25,7 @@ const Card = ({ country }) => {
         <p><span style={{ fontWeight: 400 }}>Capital: </span><span style={{ fontWeight: 500 }}>{capital}</span></p>
       </CardBody>
       <CardFooter>
-        <Button onClick={() => dispatch(selectCountry(name))}>{name}</Button>
+        <Button onClick={onCardClick}>Explore {name}</Button>
       </CardFooter>
     </StyledCard>
   );
