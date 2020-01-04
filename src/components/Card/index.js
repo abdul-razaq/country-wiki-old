@@ -1,22 +1,29 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import StyledCard, { CardHeader, CardBody, CardFooter } from './StyledCard';
-import Button from '../Button';
+// import StyledButton from '../Button/StyledButton';
+import Button from '../Button'
+import { selectCountry } from '../../store/actions';
 
 
 const Card = ({ country }) => {
-  console.log(country);
+
+  const {flag, name, capital} = country;
+
+  const dispatch = useDispatch();
+
   return (
     <StyledCard>
       <CardHeader>
-        <img src={country.flag} alt="country-flag" />
+        <img src={flag} alt="country-flag" />
       </CardHeader>
       <CardBody>
-        <p><span style={{ fontWeight: 700 }}>{country.name}</span></p>
-        <p><span style={{ fontWeight: 400 }}>Capital: </span><span style={{ fontWeight: 500 }}>{country.capital}</span></p>
+        <p><span style={{ fontWeight: 700 }}>{name}</span></p>
+        <p><span style={{ fontWeight: 400 }}>Capital: </span><span style={{ fontWeight: 500 }}>{capital}</span></p>
       </CardBody>
       <CardFooter>
-        <Button>{country.name}</Button>
+        <Button onClick={() => dispatch(selectCountry(name))}>{name}</Button>
       </CardFooter>
     </StyledCard>
   );

@@ -35,7 +35,7 @@ export const favoriteCountry = country => {
 
 export const selectCountry = countryName => async dispatch => {
   const response = await country.get(`/name/${countryName}`);
-
+  
   dispatch({
     type: SELECT_COUNTRY,
     payload: response.data,

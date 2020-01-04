@@ -7,7 +7,7 @@ const HomeCard = () => {
 
   const country = useSelector(state => state.searchedCountry);
   return country.map(countri => {
-    return <Card country={countri}/>
+    return <Card key={countri.name} country={countri}/>
   });
 };
 
