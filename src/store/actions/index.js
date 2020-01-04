@@ -10,7 +10,7 @@ import {
 
 export const searchCountry = countryName => async dispatch => {
   const response = await country.get(`/name/${countryName}`);
-
+  
   dispatch({
     type: SEARCH_COUNTRY,
     payload: response.data,

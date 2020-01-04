@@ -16,7 +16,7 @@ const store = createStore(
 
 const rootComponent = (
   <Provider store={store}>
-    <Router>
+    <Router basename="/" >
       <App />
     </Router>
   </Provider>

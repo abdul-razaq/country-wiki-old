@@ -7,6 +7,7 @@ import Image from '../../tucker-272b.png';
 
 
 const Card = props => {
+
   return (
     <StyledCard>
       <CardHeader>
