@@ -12,16 +12,13 @@ const SelectedCountry = () => {
 
   const selectedCountry = useSelector(state => state.selectedCountry);
 
-  console.log(selectedCountry);
-
   useEffect(() => {
     dispatch(selectCountry(country));
-    console.log('Component did mount');
   }, []);
 
   const loadingSpinner = <p>Loading...</p>
 
-  return (selectedCountry.length === 0 ? loadingSpinner : 'country exists');
+  return (selectedCountry.length === 0 ? loadingSpinner : selectedCountry[0].name);
 }
 
 export default SelectedCountry;
