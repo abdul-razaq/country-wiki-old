@@ -3,22 +3,20 @@ import React from 'react';
 import StyledCard, { CardHeader, CardBody, CardFooter } from './StyledCard';
 import Button from '../Button';
 
-import Image from '../../tucker-272b.png';
 
-
-const Card = props => {
-
+const Card = ({ country }) => {
+  console.log(country);
   return (
     <StyledCard>
       <CardHeader>
-        <img src={Image} alt="flag"/>
+        <img src={country.flag} alt="country-flag" />
       </CardHeader>
       <CardBody>
-        <p><span style={{fontWeight: 700}}>Country:</span> Pakistan</p>
-        <p><span style={{fontWeight: 700}}>Capital:</span> Islamabad</p>
+        <p><span style={{ fontWeight: 700 }}>{country.name}</span></p>
+        <p><span style={{ fontWeight: 400 }}>Capital: </span><span style={{ fontWeight: 500 }}>{country.capital}</span></p>
       </CardBody>
       <CardFooter>
-        <Button>Pakistan</Button>
+        <Button>{country.name}</Button>
       </CardFooter>
     </StyledCard>
   );

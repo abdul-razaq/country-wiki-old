@@ -6,10 +6,9 @@ import Card from '../../../components/Card';
 const HomeCard = () => {
 
   const country = useSelector(state => state.searchedCountry);
-  console.log(country);
-  return (
-    <Card />
-  )
-}
+  return country.map(countri => {
+    return <Card country={countri}/>
+  });
+};
 
 export default HomeCard;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 const StyledCard = styled.div`
-  max-width: 50rem;
+  max-width: 40rem;
   margin: auto;
   margin-top: 5rem;
   background-color: #eee;
@@ -25,6 +25,7 @@ export const CardBody = styled.div`
   margin-left: 1rem;
 `;
 
-export const CardFooter = styled.div``;
+export const CardFooter = styled.div`
+`;
 
 export default StyledCard;
