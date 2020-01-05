@@ -78,7 +78,7 @@ const SelectedCountry = () => {
           <h3>Miscellaneous</h3>
           <p>Top level domain (TLD): {topLevelDomain.length === 1 ? topLevelDomain : topLevelDomain.join(', ')}</p>
           <p>Calling code(s): {callingCodes.length === 1 ? callingCodes : callingCodes.join(', ')}</p>
-          <p>Numeric code(s): </p>
+          <p>Numeric code(s): {numericCode}</p>
         </div>
         <img src={flag} alt={name}/>
       </div>
