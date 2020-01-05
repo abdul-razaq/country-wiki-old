@@ -43,15 +43,15 @@ const SelectedCountry = () => {
     } = selectedCountry[0];
     return (
       <div>
-        <h3>{name}</h3>
-        <h2>{capital}</h2>
+        <h2>{name}</h2>
+        <h3>Capital: {capital}</h3>
         <div>
           <h3>Other Names</h3>
           <p>{altSpellings.join(', ')}</p>
           <p>Native names: {nativeName}</p>
         </div>
         <div>
-          <h3>Languages</h3>
+          <h3>Language Spoken</h3>
           <p>{Object.values(languages[0]).join(', ')}</p>
         </div>
         <div>
