@@ -1,0 +1,49 @@
+// const showCountryDetails = (
+  //   <StyledGrid>
+  //     <Flag>
+  //       Flag
+  //     </Flag>
+  //     <Name>
+  //       Country name
+  //       capital
+  //     </Name>
+  //     <OtherNames>
+  //       other names
+  //     </OtherNames>
+  //     <GeographicalInfo>
+  //       GeographicalInfo
+  //     </GeographicalInfo>
+  //     <Languages>
+  //       languages
+  //     </Languages>
+  //     <MoneyNotation>
+  //       Money
+  //     </MoneyNotation>
+  //     <Misc>
+  //       Misc
+  //     </Misc>
+  //   </StyledGrid>
+  // );
+
+
+  const { 
+      name,
+      topLevelDomain,
+      callingCodes,
+      capital,
+      altSpellings,
+      region,
+      subregion,
+      population,
+      latlng,
+      demonym,
+      area,
+      timezones,
+      borders,
+      nativeName,
+      numericCode,
+      currencies,
+      languages,
+      translations,
+      flag
+     } = selectedCountry[0];

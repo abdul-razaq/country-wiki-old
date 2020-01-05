@@ -9,12 +9,13 @@ import {
 } from '../actions/types';
 
 export const searchCountry = countryName => async dispatch => {
-  const response = await country.get(`/name/${countryName}`);
-  
-  dispatch({
-    type: SEARCH_COUNTRY,
-    payload: response.data,
-  });
+  if (countryName) {
+    let response = await country.get(`/name/${countryName}`);
+    dispatch({
+      type: SEARCH_COUNTRY,
+      payload: response.data,
+    });
+  } 
 };
 
 export const fetchAllCountries = () => async dispatch => {
