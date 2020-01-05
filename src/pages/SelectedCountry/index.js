@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectCountry } from '../../store/actions';
-
+import StyledGrid, { Flag, Name, OtherNames, GeographicalInfo, Languages, MoneyNotation, Misc } from './StyledSelectedCountry';
 
 const SelectedCountry = () => {
 
@@ -16,9 +16,57 @@ const SelectedCountry = () => {
     dispatch(selectCountry(country));
   }, []);
 
-  const loadingSpinner = <p>Loading...</p>
+    const { 
+      name,
+      topLevelDomain,
+      callingCodes,
+      capital,
+      altSpellings,
+      region,
+      subregion,
+      population,
+      latlng,
+      demonym,
+      area,
+      timezones,
+      borders,
+      nativeName,
+      numericCode,
+      currencies,
+      languages,
+      translations,
+      flag
+     } = selectedCountry[0];
 
-  return (selectedCountry.length === 0 ? loadingSpinner : selectedCountry[0].name);
+  const loadingSpinner = <p>Loading...</p>
+  const showCountryDetails = (
+    <StyledGrid>
+      <Flag>
+        Flag
+      </Flag>
+      <Name>
+        Country name
+        capital
+      </Name>
+      <OtherNames>
+        other names
+      </OtherNames>
+      <GeographicalInfo>
+        GeographicalInfo
+      </GeographicalInfo>
+      <Languages>
+        languages
+      </Languages>
+      <MoneyNotation>
+        Money
+      </MoneyNotation>
+      <Misc>
+        Misc
+      </Misc>
+    </StyledGrid>
+  );
+
+  return (selectedCountry.length === 0 ? loadingSpinner : name);
 }
 
 export default SelectedCountry;
