@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 
 const StyledGrid = styled.div`
-
+  display: grid;
+  grid-template: repeat(3, 1fr);
+  
 `;
 
 export const Flag = styled.img`
