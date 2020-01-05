@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectCountry } from '../../store/actions';
 import StyledGrid, { Flag, Name, OtherNames, GeographicalInfo, Languages, MoneyNotation, Misc } from './StyledSelectedCountry';
 import Spinner from '../../components/Spinner';
+import { object } from 'prop-types';
 
 
 const SelectedCountry = () => {
-
-  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const { country } = useParams();
@@ -21,12 +20,60 @@ const SelectedCountry = () => {
   }, []);
 
   if (selectedCountry[0]) {
-    const {name, flag, capital, altSpellings} = selectedCountry[0];
+    const {
+      name,
+      topLevelDomain,
+      callingCodes,
+      capital,
+      altSpellings,
+      region,
+      subregion,
+      population,
+      latlng,
+      demonym,
+      area,
+      timezones,
+      borders,
+      nativeName,
+      numericCode,
+      currencies,
+      languages,
+      translations,
+      flag
+    } = selectedCountry[0];
     return (
       <div>
         <h3>{name}</h3>
         <h2>{capital}</h2>
-        <p>{altSpellings.join(', ')}</p>
+        <div>
+          <h3>Other Names</h3>
+          <p>{altSpellings.join(', ')}</p>
+          <p>Native names: {nativeName}</p>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <p>{Object.values(languages[0]).join(', ')}</p>
+        </div>
+        <div>
+          <h3>Other translations</h3>
+          <p>{Object.values(translations).join(', ')}</p>
+        </div>
+        <div>
+          <h3>Geographical Information</h3>
+          <p>Capital: {capital}</p>
+          <p>Region / Continent: {region}</p>
+          <p>Sub-Region: {subregion}</p>
+          <p>People from {name} are called: {demonym}</p>
+          <p>Area: {area} km<sup>2</sup></p>
+          <p>Population: {population}</p>
+          <p>Latitude/Longitude: [ {latlng.join(' / ')} ]</p>
+          <p>Landed Borders: [ {borders.length === 0 ? 'None' : borders.join(', ')} ]</p>
+        </div>
+        <div>
+          <h3>Currencies spent</h3>
+          {/* <p>{Object.keys(currencies[0]).join(' ')}</p> */}
+          <p>{Object.values(currencies[0])[0]}</p>
+        </div>
         <img src={flag} alt={name}/>
       </div>
     )
