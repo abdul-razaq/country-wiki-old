@@ -48,7 +48,7 @@ const SelectedCountry = () => {
         <div>
           <h3>Other Names</h3>
           <p>{altSpellings.join(', ')}</p>
-          <p>Native names: {nativeName}</p>
+          <p>Native name: {nativeName}</p>
         </div>
         <div>
           <h3>Language Spoken</h3>
@@ -71,8 +71,8 @@ const SelectedCountry = () => {
         </div>
         <div>
           <h3>Currencies spent</h3>
-          {/* <p>{Object.keys(currencies[0]).join(' ')}</p> */}
-          <p>{Object.values(currencies[0])[0]}</p>
+          <p>{Object.values(currencies[0]).join(', ')}</p>
+          <p>Timezones: {timezones.length === 1 ? timezones : timezones.join(', ')}</p>
         </div>
         <img src={flag} alt={name}/>
       </div>
