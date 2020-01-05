@@ -74,6 +74,10 @@ const SelectedCountry = () => {
           <p>{Object.values(currencies[0]).join(', ')}</p>
           <p>Timezones: {timezones.length === 1 ? timezones : timezones.join(', ')}</p>
         </div>
+        <div>
+          <h3>Miscellaneous</h3>
+          <p>Top level domain (TLD): {topLevelDomain.length === 1 ? topLevelDomain : topLevelDomain.join(', ')}</p>
+        </div>
         <img src={flag} alt={name}/>
       </div>
     )
