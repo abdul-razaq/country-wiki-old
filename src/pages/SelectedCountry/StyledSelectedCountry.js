@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const Grid = styled.div`
   max-width: 125rem;
   margin: auto;
@@ -26,9 +25,8 @@ const Grid = styled.div`
 
 export const Lead = styled.span`
   font-weight: 600;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 `;
-
 
 export const Flag = styled.img`
   width: 100%;
@@ -54,7 +52,6 @@ export const RightSide = styled.div`
   @media screen and (max-width: 500px) {
     margin-left: 0;
   }
-  
 `;
 
 export const Currency = styled.div`
