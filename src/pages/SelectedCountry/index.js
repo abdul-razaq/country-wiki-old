@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectCountry } from '../../store/actions';
-import StyledGrid, { Flag, Name, OtherNames, GeographicalInfo, Languages, MoneyNotation, Misc } from './StyledSelectedCountry';
+import Grid, { Flag, RightSide, Lead, Name, OtherNames, GeographicalInfo, Languages, MoneyNotation, Misc } from './StyledSelectedCountry';
 import Spinner from '../../components/Spinner';
-import { object } from 'prop-types';
+import Header from '../../components/Header';
 
 
 const SelectedCountry = () => {
@@ -42,46 +42,51 @@ const SelectedCountry = () => {
       flag
     } = selectedCountry[0];
     return (
-      <div>
-        <h2>{name}</h2>
-        <h3>Capital: {capital}</h3>
-        <div>
-          <h3>Other Names</h3>
-          <p>{altSpellings.join(', ')}</p>
-          <p>Native name: {nativeName}</p>
-        </div>
-        <div>
-          <h3>Language Spoken</h3>
-          <p>{Object.values(languages[0]).join(', ')}</p>
-        </div>
-        <div>
-          <h3>Other translations</h3>
-          <p>{Object.values(translations).join(', ')}</p>
-        </div>
-        <div>
-          <h3>Geographical Information</h3>
-          <p>Capital: {capital}</p>
-          <p>Region / Continent: {region}</p>
-          <p>Sub-Region: {subregion}</p>
-          <p>People from {name} are called: {demonym}</p>
-          <p>Area: {area} km<sup>2</sup></p>
-          <p>Population: {population}</p>
-          <p>Latitude/Longitude: [ {latlng.join(' / ')} ]</p>
-          <p>Landed Borders: [ {borders.length === 0 ? 'None' : borders.join(', ')} ]</p>
-        </div>
-        <div>
-          <h3>Currencies spent</h3>
-          <p>{Object.values(currencies[0]).join(', ')}</p>
-          <p>Timezones: {timezones.length === 1 ? timezones : timezones.join(', ')}</p>
-        </div>
-        <div>
-          <h3>Miscellaneous</h3>
-          <p>Top level domain (TLD): {topLevelDomain.length === 1 ? topLevelDomain : topLevelDomain.join(', ')}</p>
-          <p>Calling code(s): {callingCodes.length === 1 ? callingCodes : callingCodes.join(', ')}</p>
-          <p>Numeric code(s): {numericCode}</p>
-        </div>
-        <img src={flag} alt={name}/>
-      </div>
+      <>
+        <Header />
+        <Grid>
+          <Flag src={flag} alt={name} />
+          <RightSide>
+            <h2>{name}</h2>
+            <h3><Lead>Capital:</Lead> {capital}</h3>
+          </RightSide>
+          <div>
+            <h3>Other Names</h3>
+            <p>{altSpellings.join(', ')}</p>
+            <p><Lead>Native name:</Lead> {nativeName}</p>
+          </div>
+          <RightSide>
+            <h3>Language Spoken</h3>
+            <p>{Object.values(languages[0]).join(', ')}</p>
+          </RightSide>
+          <div>
+            <h3>Other translations</h3>
+            <p>{Object.values(translations).join(', ')}</p>
+          </div>
+          <RightSide>
+            <h3>Geographical Information</h3>
+            <p><Lead>Capital:</Lead> {capital}</p>
+            <p><Lead>Region / Continent:</Lead> {region}</p>
+            <p><Lead>Sub-Region:</Lead> {subregion}</p>
+            <p><Lead>People from {name} are called:</Lead> {demonym}</p>
+            <p><Lead>Area:</Lead> {area} km<sup>2</sup></p>
+            <p><Lead>Population:</Lead> {population}</p>
+            <p><Lead>Latitude/Longitude:</Lead> [ {latlng.join(' / ')} ]</p>
+            <p><Lead>Landed Borders:</Lead> [ {borders.length === 0 ? 'None' : borders.join(', ')} ]</p>
+          </RightSide>
+          <div>
+            <h3>Currencies spent</h3>
+            <p>{Object.values(currencies[0]).join(', ')}</p>
+            <p><Lead>Timezones:</Lead> {timezones.length === 1 ? timezones : timezones.join(', ')}</p>
+          </div>
+          <RightSide>
+            <h3>Miscellaneous</h3>
+            <p><Lead>Top level domain (TLD):</Lead> {topLevelDomain.length === 1 ? topLevelDomain : topLevelDomain.join(', ')}</p>
+            <p><Lead>Calling code(s):</Lead> {callingCodes.length === 1 ? callingCodes : callingCodes.join(', ')}</p>
+            <p><Lead>Numeric code(s):</Lead> {numericCode}</p>
+          </RightSide>
+        </Grid>
+      </>
     )
   } else {
     return <Spinner />
