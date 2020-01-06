@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectCountry } from '../../store/actions';
-import Grid, { Flag, RightSide, Lead, Name, OtherNames, GeographicalInfo, Languages, MoneyNotation, Misc } from './StyledSelectedCountry';
+import Grid, { Flag, RightSide, Lead, Currency } from './StyledSelectedCountry';
 import Spinner from '../../components/Spinner';
 import Header from '../../components/Header';
 
@@ -74,11 +74,11 @@ const SelectedCountry = () => {
             <p><Lead>Latitude/Longitude:</Lead> [ {latlng.join(' / ')} ]</p>
             <p><Lead>Landed Borders:</Lead> [ {borders.length === 0 ? 'None' : borders.join(', ')} ]</p>
           </RightSide>
-          <div>
+          <Currency>
             <h3>Currencies spent</h3>
             <p>{Object.values(currencies[0]).join(', ')}</p>
             <p><Lead>Timezones:</Lead> {timezones.length === 1 ? timezones : timezones.join(', ')}</p>
-          </div>
+          </Currency>
           <RightSide>
             <h3>Miscellaneous</h3>
             <p><Lead>Top level domain (TLD):</Lead> {topLevelDomain.length === 1 ? topLevelDomain : topLevelDomain.join(', ')}</p>
