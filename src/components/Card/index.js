@@ -11,7 +11,7 @@ const Card = ({ country }) => {
 
   const history = useHistory();
 
-  const onCardClick = () => {
+  const onCardButtonClick = () => {
     history.push(`/countries/${name}`);
   }
 
@@ -25,7 +25,7 @@ const Card = ({ country }) => {
         <p><span style={{ fontWeight: 400 }}>Capital: </span><span style={{ fontWeight: 500 }}>{capital}</span></p>
       </CardBody>
       <CardFooter>
-        <Button onClick={onCardClick}>Explore {name}</Button>
+        <Button onClick={onCardButtonClick}>Explore {name}</Button>
       </CardFooter>
     </StyledCard>
   );

@@ -17,10 +17,12 @@ const App = () => {
         <Route path="/" exact component={HomePage} />
         <Route path="/countries/all" exact component={AllCountries} />
         <Route path="/countries/:country" exact component={SelectedCountry} />
-        <Route path="/countries/favorites" exact component={FavoriteCountries} />
-        <Route>
-          404, Page not Found
-        </Route>
+        <Route
+          path="/countries/favorites"
+          exact
+          component={FavoriteCountries}
+        />
+        <Route>404, Page not Found</Route>
       </Switch>
     </>
   );
