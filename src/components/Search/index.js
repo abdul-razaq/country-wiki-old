@@ -9,7 +9,7 @@ const Search = ({ searchInputHandler }) => {
   return (
     <StyledForm>
       <StyledLabel htmlFor="search"><FontAwesomeIcon icon={faSearchLocation}/> Search Country</StyledLabel>
-        <StyledSearchInput type="search" name="search" aria-label="Search" id="search" placeholder="Search country by name, capital..." onChange={e => searchInputHandler(e.target.value)} />
+        <StyledSearchInput type="search" name="search" aria-label="Search" id="search" placeholder="Search country by name e.g Finland..." onChange={e => searchInputHandler(e.target.value)} />
     </StyledForm>
   );
 }

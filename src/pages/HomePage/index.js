@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import Search from '../../components/Search';
@@ -21,11 +22,21 @@ const HomePage = () => {
     setSearchInput(searchValue);
   };
 
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/countries/all');
+  };
 
   return (
     <>
       <Header />
-      <Search searchInputHandler={searchInputHandler} />
+      <div style={{ display: 'flex' }}>
+        <Search searchInputHandler={searchInputHandler} />
+        <span style={{ marginTop: '2rem' }}>
+          <Button onClick={handleClick}>All countries</Button>
+        </span>
+      </div>
       <HomeCard />
     </>
   );

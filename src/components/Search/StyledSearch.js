@@ -10,6 +10,7 @@ export const StyledLabel = styled.label`
   display: block;
   text-align: center;
   margin-bottom: 1.5rem;
+  margin-left: 10rem;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.3em;
@@ -22,7 +23,7 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledSearchInput = styled.input`
-  width: 100%;
+  width: 140%;
   padding: 1rem 1rem;
   border: none;
   border: 1px solid #ddd;
