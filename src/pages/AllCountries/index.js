@@ -15,6 +15,10 @@ const AllCountries = () => {
     dispatch(fetchAllCountries());
   }, []);
 
+  const continentSelect = () => {
+    
+  }
+
   if (allCountries.length !== 0) {
     return (
       <>
