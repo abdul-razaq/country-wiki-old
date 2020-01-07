@@ -7,8 +7,7 @@ import Spinner from '../../components/Spinner';
 import Header from '../../components/Header';
 import AllCountriesCard from './AllCountriesCard';
 
-// #4c9cdc
-// #2980b9
+
 const StyledSelect = styled.select`
   display: inline-block;
   width: 30rem;
@@ -32,8 +31,6 @@ const StyledSelect = styled.select`
   & option {
     background-color: #ccc;
     outline: none;
-    border: none;
-    transform: translateY(-10px);
     display: block;
     width: 100rem;
     padding: 10rem;
@@ -63,7 +60,7 @@ const AllCountries = () => {
 
   const ContinentSelect = () => {
     return (
-      <StyledSelect name="continents" id="continent" onSelect={handleSelect}>
+      <StyledSelect name="continents" id="continent" onChange={handleSelect}>
         <option value="africa">Africa</option>
         <option value="asia">Asia</option>
         <option value="americas">Americas</option>
