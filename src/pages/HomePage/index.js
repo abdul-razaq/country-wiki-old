@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Header from '../../components/Header';
 import Search from '../../components/Search';
 import HomeCard from './HomeCard';
+import Button from '../../components/Button';
 
 import { searchCountry } from '../../store/actions';
 

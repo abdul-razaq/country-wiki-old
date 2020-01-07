@@ -41,8 +41,28 @@ const Close = styled.span`
   }
 `;
 
+const Header = styled.div`
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: #fff;
+`;
+
+const Body = styled.div`
+  padding: 2px 16px;
+`;
+
+const Footer = styled.div`
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: #fff;
+`;
+
 
 const Modal = () => {
+
+  const onDismiss = () => {
+
+  }
 
   return ReactDOM.createPortal(
     <StyledModal onClick={onDismiss}>
@@ -60,14 +80,11 @@ const Modal = () => {
             <h3>This is the Footer</h3>
           </Footer>
         </Content>
-        <Actions>
-          This is the action
-        </Actions>
       </div>
     </StyledModal>,
 
     document.querySelector("#modal")
   )
-}
+};
 
 export default Modal;
