@@ -3,6 +3,7 @@ import { fetchAllCountries } from '../../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Spinner from '../../components/Spinner';
+import Header from '../../components/Header';
 import AllCountriesCard from './AllCountriesCard';
 
 
@@ -15,7 +16,12 @@ const AllCountries = () => {
   }, []);
 
   if (allCountries.length !== 0) {
-    return <AllCountriesCard />;
+    return (
+      <>
+      <Header />
+      <AllCountriesCard />
+      </>
+    );
   } else {
     return <Spinner />;
   }
