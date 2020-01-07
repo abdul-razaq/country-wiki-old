@@ -18,8 +18,11 @@ export const searchCountry = countryName => async dispatch => {
   } 
 };
 
-export const fetchAllCountries = () => async dispatch => {
-  const response = await country.get('/all');
+export const fetchAllCountries = continent => async dispatch => {
+  let endpoint;
+  continent === '' ? endpoint = '/all' : endpoint = `/name/${continent}`;
+  console.log(endpoint);
+  const response = await country.get(endpoint);
 
   dispatch({
     type: FETCH_ALL_COUNTRIES,

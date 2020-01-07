@@ -14,7 +14,7 @@ const StyledSelect = styled.select`
   outline: none;
   border: none;
   cursor: pointer;
-  padding: 1rem 1rem;
+  padding: 1rem;
   margin-top: 2rem;
   color: inherit;
   font-family: inherit;
@@ -40,7 +40,7 @@ const StyledSelect = styled.select`
 
 
 const AllCountries = () => {
-  const [continent, setContinent] = useState(null);
+  const [continent, setContinent] = useState('');
   const dispatch = useDispatch();
   const allCountries = useSelector(state => state.allCountries);
 
@@ -56,11 +56,12 @@ const AllCountries = () => {
   useEffect(() => {
     
     console.log(continent);
+    dispatch(fetchAllCountries(continent));
   }, [continent])
 
   const ContinentSelect = () => {
     return (
-      <StyledSelect name="continents" id="continent" onChange={handleSelect}>
+      <StyledSelect name="continents" id="continent" onChange={handleSelect} value={continent}>
         <option value="africa">Africa</option>
         <option value="asia">Asia</option>
         <option value="americas">Americas</option>
