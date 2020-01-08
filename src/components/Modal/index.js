@@ -14,7 +14,7 @@ const customStyles = {
 };
 
 
-Modal.setAppElement('#modal');
+Modal.setAppElement("#modal");
 
 const AboutModal = () => {
 
@@ -25,7 +25,7 @@ const AboutModal = () => {
   }
 
   const afterOpenModal = () => {
-    subtitle.style.color = '#f00';
+    // subtitle.style.color = '#f00';
   }
 
   const closeModal = () => {
@@ -42,8 +42,9 @@ const AboutModal = () => {
         style={customStyles}
         contentLabel="About"
       >
-        <h2 ref={subtitle => subtitle = subtitle}>About</h2>
-        <button></button>
+        <h2>About</h2>
+        <button onClick={closeModal}>close</button>
+        <div>I am the About modal</div>
       </Modal>
     </div>
   );

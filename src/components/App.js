@@ -9,6 +9,7 @@ import FavoriteCountries from '../pages/FavoriteCountries';
 
 import GlobalStyle from '../GlobalStyle';
 import * as ROUTES from '../constants/routes';
+import AboutModal from './Modal';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           exact
           component={FavoriteCountries}
         />
+        <Route exact path="/about" component={AboutModal} />
         <Route>404, Page not Found</Route>
       </Switch>
     </>
