@@ -15,14 +15,16 @@ export const searchCountry = countryName => async dispatch => {
       type: SEARCH_COUNTRY,
       payload: response.data,
     });
-  } 
+  }
 };
 
-export const fetchAllCountries = continent => async dispatch => {
-  let endpoint;
-  continent === '' ? endpoint = '/all' : endpoint = `/name/${continent}`;
-  console.log(endpoint);
-  const response = await country.get(endpoint);
+export const fetchAllCountries = region => async dispatch => {
+  let response;
+  if (region === '') {
+    response = await country.get('/all');
+  } else {
+    response = await country.get(`/region/${region}`);
+  }
 
   dispatch({
     type: FETCH_ALL_COUNTRIES,
@@ -39,7 +41,7 @@ export const favoriteCountry = country => {
 
 export const selectCountry = countryName => async dispatch => {
   const response = await country.get(`/name/${countryName}`);
-  
+
   dispatch({
     type: SELECT_COUNTRY,
     payload: response.data,

@@ -40,7 +40,7 @@ const StyledSelect = styled.select`
 
 
 const AllCountries = () => {
-  const [continent, setContinent] = useState('');
+  const [region, setRegion] = useState('');
   const dispatch = useDispatch();
   const allCountries = useSelector(state => state.allCountries);
 
@@ -50,23 +50,21 @@ const AllCountries = () => {
 
   const handleSelect = event => {
     event.preventDefault();
-    setContinent(event.target.value);
+    setRegion(event.target.value);
   }
 
   useEffect(() => {
-    
-    console.log(continent);
-    dispatch(fetchAllCountries(continent));
-  }, [continent])
+    dispatch(fetchAllCountries(region));
+  }, [region])
 
-  const ContinentSelect = () => {
+  const RegionSelect = () => {
     return (
-      <StyledSelect name="continents" id="continent" onChange={handleSelect} value={continent}>
+      <StyledSelect name="region" id="region" onChange={handleSelect} value={region}>
         <option value="africa">Africa</option>
-        <option value="asia">Asia</option>
         <option value="americas">Americas</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
         <option value="oceania">Oceania</option>
-        <option value="australia">Australia</option>
       </StyledSelect>
     )
   }
@@ -75,7 +73,7 @@ const AllCountries = () => {
     return (
       <>
       <Header />
-      <ContinentSelect />
+      <RegionSelect />
       <AllCountriesCard />
       </>
     );
