@@ -17,7 +17,11 @@ const App = () => {
       <Switch>
         <Route path={ROUTES.BASE} exact component={HomePage} />
         <Route path={ROUTES.ALL_COUNTRIES} exact component={AllCountries} />
-        <Route path={ROUTES.SELECTED_COUNTRY} exact component={SelectedCountry} />
+        <Route
+          path={ROUTES.SELECTED_COUNTRY}
+          exact
+          component={SelectedCountry}
+        />
         <Route
           path={ROUTES.FAVORITE_COUNTRIES}
           exact
