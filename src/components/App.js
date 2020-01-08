@@ -8,17 +8,18 @@ import SelectedCountry from '../pages/SelectedCountry';
 import FavoriteCountries from '../pages/FavoriteCountries';
 
 import GlobalStyle from '../GlobalStyle';
+import * as ROUTES from '../constants/routes';
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
       <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/countries/all" exact component={AllCountries} />
-        <Route path="/countries/:country" exact component={SelectedCountry} />
+        <Route path={ROUTES.BASE} exact component={HomePage} />
+        <Route path={ROUTES.ALL_COUNTRIES} exact component={AllCountries} />
+        <Route path={ROUTES.SELECTED_COUNTRY} exact component={SelectedCountry} />
         <Route
-          path="/countries/favorites"
+          path={ROUTES.FAVORITE_COUNTRIES}
           exact
           component={FavoriteCountries}
         />
