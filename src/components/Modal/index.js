@@ -15,6 +15,11 @@ const customStyles = {
   },
 };
 
+const styles = {
+  textDecoration: 'none',
+  color: 'inherit',
+}
+
 Modal.setAppElement('#modal');
 
 const AboutModal = () => {
@@ -41,7 +46,7 @@ const AboutModal = () => {
       >
         <h2 style={{fontFamily: 'inherit', fontWeight: '300', textAlign: 'center', marginTop: '-5rem'}}>About</h2>
         <span onClick={closeModal} style={{position: 'absolute', top: '10%', right: '10%', cursor: 'pointer', fontSize: '3rem'}}>&times;</span>
-        <div>App created by AbdulRazaq <a href="https://github.com/abdul-razaq" target="_blank">github</a> <a href="https://twitter.com/ant1g3n" target="_blank">twitter</a> </div>
+        <div>App created by AbdulRazaq <a style={styles} href="https://github.com/abdul-razaq" target="_blank">github</a> <a style={styles} href="https://twitter.com/ant1g3n" target="_blank">twitter</a> </div>
       </Modal>
     </div>
   );
