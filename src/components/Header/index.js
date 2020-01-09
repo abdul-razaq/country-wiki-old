@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
 import StyledHeader, { StyledNav } from './StyledHeader';
+import AboutModal from '../Modal';
 
 const Header = () => {
 
@@ -11,7 +12,8 @@ const Header = () => {
     <StyledHeader>
       <StyledNav>
         <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}><h1><FontAwesomeIcon icon={faGlobeAmericas} /> Country Encyclopedia</h1></Link>
-        <h3><FontAwesomeIcon icon={faInfoCircle} /> About</h3>
+        <Link style={{ textDecoration: 'none', color: 'inherit' }} component={AboutModal}>
+        </Link>
       </StyledNav>
     </StyledHeader>
   );
