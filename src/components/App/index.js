@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // import pages to display
-import HomePage from '../pages/HomePage';
-import AllCountries from '../pages/AllCountries';
-import SelectedCountry from '../pages/SelectedCountry';
-import FavoriteCountries from '../pages/FavoriteCountries';
+import HomePage from '../../pages/HomePage';
+import AllCountries from '../../pages/AllCountries';
+import SelectedCountry from '../../pages/SelectedCountry';
+import FavoriteCountries from '../../pages/FavoriteCountries';
 
-import GlobalStyle from '../GlobalStyle';
-import * as ROUTES from '../constants/routes';
+import GlobalStyle from '../../GlobalStyle';
+import * as ROUTES from '../../constants/routes';
 
 
 const App = () => {
