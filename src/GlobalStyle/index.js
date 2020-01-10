@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
     font-family: 'Fira Sans', sans-serif;
     color: #444;
+
+    &::selection {
+      color: #2980b9; 
+    }
   }
     
 `;

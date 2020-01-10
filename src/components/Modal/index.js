@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import SocialMediaIcons from 'react-social-media-icons';
+
+
+const socialMediaIcons = [
+  {
+    url: 'https://github.com/abdul-razaq',
+    className: 'fa-github-square',
+  },
+  {
+    url: 'https://twitter.com/ant1g3n',
+    className: 'fa-twitter',
+  },
+];
+
 
 const customStyles = {
   content: {
@@ -20,7 +34,6 @@ const styles = {
   color: 'inherit',
 }
 
-// Modal.setAppElement('#modal');
 
 const AboutModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
