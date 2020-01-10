@@ -20,7 +20,7 @@ const styles = {
   color: 'inherit',
 }
 
-Modal.setAppElement('#modal');
+// Modal.setAppElement('#modal');
 
 const AboutModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
