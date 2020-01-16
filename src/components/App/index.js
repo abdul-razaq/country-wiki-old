@@ -6,6 +6,7 @@ import HomePage from '../../pages/HomePage';
 import AllCountries from '../../pages/AllCountries';
 import SelectedCountry from '../../pages/SelectedCountry';
 import FavoriteCountries from '../../pages/FavoriteCountries';
+import Header from './Header';
 
 import GlobalStyle from '../../GlobalStyle';
 import * as ROUTES from '../../constants/routes';
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
+      <Header />
       <Switch>
         <Route path={ROUTES.BASE} exact component={HomePage} />
         <Route path={ROUTES.ALL_COUNTRIES} exact component={AllCountries} />

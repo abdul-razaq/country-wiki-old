@@ -41,7 +41,6 @@ const SelectedCountry = () => {
     } = selectedCountry[0];
     return (
       <>
-        <Header />
         <Grid>
           <Flag src={flag} alt={name} />
           <RightSide>

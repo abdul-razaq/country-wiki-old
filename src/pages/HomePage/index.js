@@ -30,7 +30,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Header />
       <div style={{ display: 'flex' }}>
         <Search searchInputHandler={searchInputHandler} />
         <span style={{ marginTop: '2rem' }}>

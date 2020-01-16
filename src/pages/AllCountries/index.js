@@ -72,7 +72,6 @@ const AllCountries = () => {
   if (allCountries.length !== 0) {
     return (
       <>
-      <Header />
       <RegionSelect />
       <AllCountriesCard />
       </>
